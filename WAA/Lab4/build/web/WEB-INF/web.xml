@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>Names</servlet-name>
+        <servlet-class>controller.Names</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddNames</servlet-name>
+        <servlet-class>controller.AddNames</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveNames</servlet-name>
+        <servlet-class>controller.RemoveNames</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Names</servlet-name>
+        <url-pattern>/Display.AllNames</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddNames</servlet-name>
+        <url-pattern>/Add.Names</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveNames</servlet-name>
+        <url-pattern>/Remove.Names</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

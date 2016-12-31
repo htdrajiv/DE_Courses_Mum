@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+                    <h:form id="form" rendered="true">
+	From <h:selectOneMenu value="#{flight.from}" >
+                    <f:selectItem itemValue="Amsterdam" itemLabel="Amsterdam"
+                                  itemDisabled="false"></f:selectItem>
+                    <f:selectItem itemValue="Paris" itemLabel="Paris"
+                                  itemDisabled="false"></f:selectItem>
+                    <f:selectItem itemValue="Lissabon" itemLabel="Lissabon"
+                                  itemDisabled="false"></f:selectItem>
+                </h:selectOneMenu>
+                <br/>
+                <br/>
+                To <h:selectOneMenu value="#{flight.to}" >
+                    <f:selectItem itemValue="New York" itemLabel="New York"
+                                  itemDisabled="false"></f:selectItem>
+                    <f:selectItem itemValue="Boston" itemLabel="Boston"
+                                  itemDisabled="false"></f:selectItem>
+                    <f:selectItem itemValue="Chicago" itemLabel="Chicago"
+                                  itemDisabled="false"></f:selectItem>
+                </h:selectOneMenu>
+                <br/>
+                <br/>
+                Departure date<h:inputText value="#{flight.departuredate}" />
+                <br/>
+                <br/>
+                Return date <h:inputText value="#{flight.returndate}" />
+                <br/>
+                <br/>
+                <h:selectOneRadio value="#{flight.trip}"
+                                  required="false">
+                    <f:selectItem itemValue="Round trip" itemLabel="Round trip"
+                                  itemDisabled="false"></f:selectItem>
+                    <f:selectItem itemValue="One way" itemLabel="One way"
+                                  itemDisabled="false"></f:selectItem>
+                </h:selectOneRadio>
+                <br/>
+                <h:selectManyCheckbox value="#{flight.selection}"
+                                      layout="pageDirection">
+                    <f:selectItem itemValue="first class" itemLabel="first class" />
+                    <f:selectItem itemValue="exact these dates" itemLabel="exact these dates" />
+                    <f:selectItem itemValue="no stopover" itemLabel="no stopover" />
+                </h:selectManyCheckbox>
+
+                <br/>
+                <h:commandButton value="Submit"
+                                 action="#{flight.submit}" />
+            </h:form>
+
+    </h:body>
+</html>
+

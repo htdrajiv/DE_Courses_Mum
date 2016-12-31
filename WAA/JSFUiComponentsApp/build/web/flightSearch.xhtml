@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Search Flight</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            From :  <h:selectOneMenu value="#{flightSearchBean.from}">
+                        <f:selectItem itemValue="Amsterdam" itemLabel="Amsterdam" />
+                        <f:selectItem itemValue="Paris" itemLabel="Paris" />
+                        <f:selectItem itemValue="Lissabon" itemLabel="Lissabon" />
+                    </h:selectOneMenu>
+            <br/><br/>
+            To :  <h:selectOneMenu value="#{flightSearchBean.to}">
+                        <f:selectItem itemValue="NewYork" itemLabel="New York" />
+                        <f:selectItem itemValue="Boston" itemLabel="Boston" />
+                        <f:selectItem itemValue="Chicago" itemLabel="Chicago" />
+                    </h:selectOneMenu>
+            <br/><br/>
+            Departure Date : <h:inputText value="#{flightSearchBean.departureDate}"/>
+            <br/><br/>
+            Return Date: <h:inputText value="#{flightSearchBean.returnDate}"/>
+            <br/><br/>
+            <h:selectOneRadio value="#{flightSearchBean.roundOrOneWay}">
+                <f:selectItem itemValue="Round Trip" itemLabel="Round Trip"/>
+                <f:selectItem itemValue="One Way" itemLabel="One Way"/>
+            </h:selectOneRadio>
+            <br/><br/>
+            <h:selectManyCheckbox value="#{flightSearchBean.options}">
+                <f:selectItem itemValue="first class" itemLabel="first class"/>
+                <f:selectItem itemValue="exact those dates" itemLabel="exact those dates"/>
+                <f:selectItem itemValue="no stopover" itemLabel="no stopover"/>
+            </h:selectManyCheckbox>
+            <br/><br/>
+            <h:commandButton action="#{flightSearchBean.displayMsgInConsole()}" value="Submit"/>
+        </h:form>
+    </h:body>
+</html>
+
