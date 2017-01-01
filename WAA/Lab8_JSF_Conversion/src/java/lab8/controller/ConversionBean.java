@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab8;
+package lab8.controller;
 
 import com.sun.tools.ws.wsdl.document.Output;
 import java.text.ParseException;
@@ -26,14 +26,14 @@ public class ConversionBean {
     public ConversionBean() {
         
     }
-    private String date;
+    private Date date;
     private String temperature;
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -44,31 +44,6 @@ public class ConversionBean {
     public void setTemperature(String temperature) {
         this.temperature = temperature;
     }
-   
-    public String convertDate(){        
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yy");        
-        StringBuilder outputStr = new StringBuilder();
-        try {
-            Date date = formatter.parse(this.date);            
-            outputStr.append(new SimpleDateFormat("E, MMM dd yyyy").format(date));            
-
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }        
-        return outputStr.toString();
-    }    
-    
-    public String convertTemperature(){
-        char unit = this.temperature.charAt(0);
-        String measure = this.temperature.substring(1, this.temperature.length()-1);
-        String unitC = "";
-        switch(unit){ 
-            case 'F': unitC = "Farenheit";
-            break; 
-            case 'C': unitC = "Celcius"; 
-            break; 
-        }
-        return measure+" "+unitC;
-    }
+  
     
 }

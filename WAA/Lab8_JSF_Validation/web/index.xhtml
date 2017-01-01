@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+<!--        <h:form>
+            Brand <h:inputText value=""/><br/><br/>
+            License no.<h:inputText value=""/><br/><br/> 
+            Price <h:inputText value=""/><br/><br/> 
+            <h:commandButton action="#" value="Submit"/>
+        </h:form>-->
+        
+        
+        <h:form>
+	Brand : <h:inputText id="brand"
+			value="#{validatorBean.brand}">
+			<f:validator validatorId="lab8.service.BrandValidator" />
+		</h:inputText>
+		<h:message for="brand" style="color:red;" />
+		<br />
+		
+		license No : <h:inputText id="licenceNo"
+                                    value="#{validatorBean.licenseNo}" />	
+		<h:message for="licenceNo" style="color:red;" /><br />
+		Price : 
+                <h:inputText value="#{validatorBean.price}" id="price">
+			<f:validator validatorId="lab8.service.PriceValidator"/>
+		</h:inputText>
+		<h:message for="price" style="color:red;" /><br />
+		
+		<h:commandButton value="Submit"
+			action="index.xhtml" />
+
+	</h:form>
+    </h:body>
+</html>
+

@@ -1,16 +1,27 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Temperature</title>
     </h:head>
     <h:body>
         <h:form>
-            Date &nbsp;<h:inputText value="#{conversionBean.date}" /><br/><br/>
-            Temperature &nbsp;<h:inputText value="#{conversionBean.temperature}"/><br/><br/>
-            <h:commandButton action="converted.xhtml" value="Submit"/>
-        </h:form>
+            Date : <h:inputText id="date" value="#{conversionBean.date}"
+			required="true">
+			<f:convertDateTime pattern="d/M/yy" />
+		</h:inputText>
+		<h:message for="date" style="color:red" />
+		<br />
+                Temperature : <h:inputText id="temperature" value="#{conversionBean.temperature}">
+			<f:converter converterId="lab8.service.ConverterService"/>
+			
+		</h:inputText>
+		<h:message for="temperature" style="color:red;"/><br />
+		<h:commandButton action="converted.xhtml"
+			value="Convert" />
+	</h:form>
     </h:body>
 </html>
 
