@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Shopping Cart</title>
+        
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="style.css"  />
+        <div id="mainDiv">
+            <h3 align="center">Shopping Cart</h3>
+            <h:panelGrid id="mainPanelGrid">                
+                <h:form>
+                    <div id="container" >
+                        <div id="row" >
+                            <div id="products" class="cell">
+                                <table id="productTable" >
+                                    <thead>
+                                        <tr>
+                                            <td>Product Code </td>
+                                            <td>Product Name </td>
+                                            <td>Price </td>
+                                            <td>Quantity </td>
+                                            <td>Total Price </td>
+                                            <td>Action </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <c:forEach var="item" items="#{shoppingCartBean.products}">
+                                            <tr>
+                                                <td>#{item.product.code} </td>
+                                                <td>#{item.product.name} </td>
+                                                <td>#{item.product.price} </td>
+                                                <td>#{item.quantity} </td>
+                                                <td>#{item.totalPrice} </td>
+                                                <td>
+                                                    <h:commandButton value="remove from cart" action="#{shoppingCartBean.removeFromCart(item)}"/>
+                                                                                 
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
+                                        <tr>
+                                            <td colspan="4" >Total Price</td>
+                                            <td colspan="2">#{shoppingCartBean.totalPrice}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+            </h:panelGrid>
+        </div>
+        
+        <br/><br/><br/>
+        <h:form>
+            <h:commandLink value="Continue Shopping" action="cdShop.xhtml?faces-redirect=true"/>
+        </h:form>
+    </h:body>
+</html>
+
