@@ -15,4 +15,4 @@ and open the template in the editor.
 .cell{ display: table-cell; }   
 #productTable{ border: solid #9999ff thin; }
 #productTable tr td {border: solid #9999ff thin; text-align: center;}
-
+.redText{ color: red; }
