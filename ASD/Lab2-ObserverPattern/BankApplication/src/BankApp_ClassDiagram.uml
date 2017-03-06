@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="2736.41975308642" y="154.5">observer.ObserverAccountCreation</node>
+    <node x="0.0" y="121.0">model.Customer</node>
+    <node x="1676.8364197530864" y="499.0">service.SubjectAccountServiceImp</node>
+    <node x="1208.41512345679" y="543.5">dao.AccountDaoImp</node>
+    <node x="2885.8364197530864" y="576.5">observer.Logger</node>
+    <node x="342.9583333333335" y="411.0">model.Account</node>
+    <node x="1555.91512345679" y="99.5">service.Subject</node>
+    <node x="789.2114197530865" y="964.5">model.SavingAccount</node>
+    <node x="501.0864197530864" y="154.5">model.Interest</node>
+    <node x="2694.8364197530864" y="576.5">observer.EmailSender</node>
+    <node x="2307.4629629629635" y="154.5">observer.ObserverAccountModification</node>
+    <node x="87.95833333333348" y="576.5">model.CheckingAccountInterest</node>
+    <node x="1273.91512345679" y="121.5">dao.AccountDao</node>
+    <node x="287.2114197530864" y="964.5">model.CheckingAccount</node>
+    <node x="1368.041666666667" y="854.0">service.AccountServiceImpl</node>
+    <node x="2128.8364197530864" y="521.5">service.AccountService</node>
+    <node x="838.9583333333336" y="576.5">model.SavingAccountInterest</node>
+    <node x="2459.8364197530864" y="576.5">observer.SmsSender</node>
+    <node x="1881.1250000000005" y="1165.0">Main</node>
+    <node x="868.9151234567901" y="0.0">model.AccountEntry</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="observer.EmailSender" target="observer.ObserverAccountCreation">
+      <point x="0.0" y="-26.0" />
+      <point x="2780.3364197530864" y="391.0" />
+      <point x="2821.91975308642" y="391.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="model.SavingAccount" target="model.SavingAccountInterest">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Main" target="observer.SmsSender">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="observer.Logger" target="observer.ObserverAccountCreation">
+      <point x="0.0" y="-26.0" />
+      <point x="2971.3364197530864" y="391.0" />
+      <point x="2878.91975308642" y="391.0" />
+      <point x="57.0" y="26.0" />
+    </edge>
+    <edge source="Main" target="service.AccountServiceImpl">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="observer.SmsSender" target="observer.ObserverAccountModification">
+      <point x="0.0" y="-26.0" />
+      <point x="2567.3364197530864" y="381.0" />
+      <point x="2468.7129629629635" y="381.0" />
+      <point x="53.75" y="26.0" />
+    </edge>
+    <edge source="service.AccountServiceImpl" target="dao.AccountDaoImp">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="service.AccountServiceImpl" target="dao.AccountDao">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="service.SubjectAccountServiceImp" target="service.Subject">
+      <point x="-144.0" y="-103.5" />
+      <point x="1748.8364197530864" y="391.0" />
+      <point x="1784.41512345679" y="391.0" />
+      <point x="0.0" y="81.0" />
+    </edge>
+    <edge source="model.SavingAccount" target="model.Account">
+      <point x="-28.5" y="-15.0" />
+      <point x="817.7114197530865" y="834.0" />
+      <point x="699.9583333333335" y="834.0" />
+      <point x="119.0" y="191.5" />
+    </edge>
+    <edge source="service.AccountServiceImpl" target="service.SubjectAccountServiceImp">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="model.CheckingAccountInterest" target="model.Interest">
+      <point x="0.0" y="-26.0" />
+      <point x="205.45833333333348" y="391.0" />
+      <point x="540.2530864197531" y="391.0" />
+      <point x="-78.33333333333331" y="26.0" />
+    </edge>
+    <edge source="Main" target="model.SavingAccount">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="model.CheckingAccount" target="model.CheckingAccountInterest">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="model.CheckingAccount" target="model.Account">
+      <point x="32.25" y="-15.0" />
+      <point x="383.9614197530864" y="834.0" />
+      <point x="461.9583333333335" y="834.0" />
+      <point x="-119.0" y="191.5" />
+    </edge>
+    <edge source="service.AccountServiceImpl" target="model.AccountEntry">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="model.Account" target="model.Customer">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Main" target="model.Customer">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="service.SubjectAccountServiceImp" target="observer.ObserverAccountModification">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="model.SavingAccountInterest" target="model.Interest">
+      <point x="0.0" y="-26.0" />
+      <point x="956.4583333333336" y="381.0" />
+      <point x="696.9197530864196" y="381.0" />
+      <point x="78.33333333333331" y="26.0" />
+    </edge>
+    <edge source="model.Account" target="model.AccountEntry">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="service.AccountServiceImpl" target="service.AccountService">
+      <point x="153.33333333333326" y="-125.5" />
+      <point x="1705.3750000000005" y="834.0" />
+      <point x="2284.3364197530864" y="834.0" />
+      <point x="0.0" y="81.0" />
+    </edge>
+    <edge source="Main" target="observer.EmailSender">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="dao.AccountDaoImp" target="dao.AccountDao">
+      <point x="0.0" y="-59.0" />
+      <point x="-65.5" y="59.0" />
+    </edge>
+    <edge source="Main" target="observer.Logger">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="service.SubjectAccountServiceImp" target="observer.ObserverAccountCreation">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="model.Account" target="model.Interest">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="0.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
